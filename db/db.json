@@ -1,0 +1,90 @@
+{
+  "Sources": [
+    {
+      "ID": 0,
+      "Name": "main",
+      "Status": true,
+      "Campaigns": [0]
+    },
+    {
+      "ID": 1,
+      "Name": "crypto",
+      "Status": true,
+      "Campaigns": [1]
+    },
+    {
+      "ID": 2,
+      "Name": "investment",
+      "Status": true,
+      "Campaigns": [1]
+    }
+  ],
+  "Campaigns": [
+    {
+      "ID": 0,
+      "Name": "self promotion",
+      "StartTime": "2025-01-22T15:26:50.8622274+02:00",
+      "EndTime": "2025-01-23T01:26:50.8622274+02:00",
+      "Sources": [0],
+      "Creatives": [0, 3, 4]
+    },
+    {
+      "ID": 1,
+      "Name": "fancy videos",
+      "StartTime": "2025-01-22T15:26:50.8622274+02:00",
+      "EndTime": "2025-01-23T15:26:50.8622274+02:00",
+      "Sources": [1, 2],
+      "Creatives": [1, 2, 5, 6, 7]
+    }
+  ],
+  "Creatives": [
+    {
+      "ID": 0,
+      "Price": 91000,
+      "Duration": 12000,
+      "Playlist": "Blank 0"
+    },
+    {
+      "ID": 1,
+      "Price": 490000,
+      "Duration": 32000,
+      "Playlist": "Blank 1"
+    },
+    {
+      "ID": 2,
+      "Price": 76000,
+      "Duration": 37000,
+      "Playlist": "Blank 2"
+    },
+    {
+      "ID": 3,
+      "Price": 210000,
+      "Duration": 44000,
+      "Playlist": "#EXTM3U\n#EXT-X-VERSION:3\n#EXT-X-TARGETDURATION:30\n#EXT-X-MEDIA-SEQUENCE:0\n\n#EXTINF:30.0,\nhttp://localhost:8000/o1.ts\n\n#EXT-X-ENDLIST"
+    },
+    {
+      "ID": 4,
+      "Price": 115000,
+      "Duration": 23000,
+      "Playlist": "Blank 4"
+    },
+    {
+      "ID": 5,
+      "Price": 131000,
+      "Duration": 25000,
+      "Playlist": "Blank 5"
+    },
+    {
+      "ID": 6,
+      "Price": 41000,
+      "Duration": 17000,
+      "Playlist": "Blank 6"
+    },
+    {
+      "ID": 7,
+      "Price": 74000,
+      "Duration": 22000,
+      "Playlist": "Blank 7"
+    }
+  ]
+}
