@@ -16,7 +16,13 @@ $ go build -o bin/ cmd/lhlc/lhlc.go
 ```bash
 $ .\bin\ahlc.exe [<app address>] [<json-server address>] [<cache ttl>]
 $ .\bin\lhlc.exe [<app address>] [<ahlc address>] [<json-server address>]
+```
+### Run db
+```bash
 $ npx json-server -w ./db/db.json
+```
+### Run any static web server, for example:
+```bash
 $ py -m http.server 8000 -d .\assets\
 ```
 ### AHLC endpoints
