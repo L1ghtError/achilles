@@ -44,16 +44,14 @@ func (ah *AppHandler) GetAppropriateContent(w http.ResponseWriter, r *http.Reque
 	sourceID := r.URL.Query().Get("sourceID") // Get query param
 	srcID, err := strconv.Atoi(sourceID)
 	if err != nil {
-		// !! TODO: handle err
-		w.Write([]byte("Warning, Err in Query"))
+		http.Error(w, "Warning, Err in Query", http.StatusBadRequest)
 		return
 	}
 
 	maxDuration := r.URL.Query().Get("maxDuration") // Get query param
 	maxDur, err := strconv.Atoi(maxDuration)
 	if err != nil {
-		// !! TODO: handle err
-		w.Write([]byte("Warning, Err in Query"))
+		http.Error(w, "Warning, Err in Query", http.StatusBadRequest)
 		return
 	}
 
@@ -64,28 +62,28 @@ func (ah *AppHandler) GetAppropriateContent(w http.ResponseWriter, r *http.Reque
 		return
 	}
 	if source.Status == models.Inactive {
-		w.Write([]byte("Status inactive: " + sourceID + " " + maxDuration))
+		http.Error(w, "Status inactive: "+sourceID+" "+maxDuration, http.StatusGone)
 		return
 	}
 	campaigns := ss.GetCampaignBatch(source.Campaigns)
 	if len(campaigns) == 0 {
-		w.Write([]byte("There is 0 campaigns: " + sourceID + " " + maxDuration))
+		http.Error(w, "There is 0 campaigns: "+sourceID+" "+maxDuration, http.StatusNotFound)
 		return
 	}
 
 	cids := creativityFromCampain(campaigns)
 	if len(cids) == 0 {
-		w.Write([]byte("There is no suitable creativities: " + sourceID + " " + maxDuration))
+		http.Error(w, "There is no suitable creativities: "+sourceID+" "+maxDuration, http.StatusNotFound)
 		return
 	}
 	creatives := ss.GetCreativeBatch(cids)
 	if len(creatives) == 0 {
-		w.Write([]byte("There is no suitable creativities: " + sourceID + " " + maxDuration))
+		http.Error(w, "There is no suitable creativities: "+sourceID+" "+maxDuration, http.StatusNotFound)
 		return
 	}
 	ci := appropriateCreativityIndex(creatives, maxDur)
 	if ci == -1 {
-		w.Write([]byte("There is no suitable creativities: " + sourceID + " " + maxDuration))
+		http.Error(w, "There is no suitable creativities: "+sourceID+" "+maxDuration, http.StatusNotFound)
 		return
 	}
 	id := strconv.Itoa(int(creatives[ci].ID))
