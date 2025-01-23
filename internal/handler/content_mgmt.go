@@ -88,5 +88,7 @@ func (ah *AppHandler) GetAppropriateContent(w http.ResponseWriter, r *http.Reque
 		w.Write([]byte("There is no suitable creativities: " + sourceID + " " + maxDuration))
 		return
 	}
+	id := strconv.Itoa(int(creatives[ci].ID))
+	w.Header().Set("X-Resource-ID", id)
 	w.Write([]byte(creatives[ci].Playlist))
 }

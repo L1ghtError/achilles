@@ -1,87 +1,108 @@
 {
   "Sources": [
     {
-      "ID": 0,
+      "id": 0,
       "Name": "main",
       "Status": true,
-      "Campaigns": [0]
+      "Campaigns": [
+        0
+      ]
     },
     {
-      "ID": 1,
+      "id": 1,
       "Name": "crypto",
       "Status": true,
-      "Campaigns": [1]
+      "Campaigns": [
+        1
+      ]
     },
     {
-      "ID": 2,
+      "id": 2,
       "Name": "investment",
       "Status": true,
-      "Campaigns": [1]
+      "Campaigns": [
+        1
+      ]
     }
   ],
   "Campaigns": [
     {
-      "ID": 0,
+      "id": 0,
       "Name": "self promotion",
       "StartTime": "2025-01-22T15:26:50.8622274+02:00",
-      "EndTime": "2025-01-23T01:26:50.8622274+02:00",
-      "Sources": [0],
-      "Creatives": [0, 3, 4]
+      "EndTime": "2026-01-23T01:26:50.8622274+02:00",
+      "Sources": [
+        0
+      ],
+      "Creatives": [
+        0,
+        3,
+        4
+      ]
     },
     {
-      "ID": 1,
+      "id": 1,
       "Name": "fancy videos",
       "StartTime": "2025-01-22T15:26:50.8622274+02:00",
-      "EndTime": "2025-01-23T15:26:50.8622274+02:00",
-      "Sources": [1, 2],
-      "Creatives": [1, 2, 5, 6, 7]
+      "EndTime": "2026-01-23T15:26:50.8622274+02:00",
+      "Sources": [
+        1,
+        2
+      ],
+      "Creatives": [
+        1,
+        2,
+        5,
+        6,
+        7
+      ]
     }
   ],
   "Creatives": [
     {
-      "ID": 0,
+      "id": 0,
       "Price": 91000,
       "Duration": 12000,
-      "Playlist": "Blank 0"
+      "Playlist": "Blank 00"
     },
     {
-      "ID": 1,
+      "id": 1,
       "Price": 490000,
-      "Duration": 32000,
-      "Playlist": "Blank 1"
+      "Duration": 16,
+      "Playlist": "#EXTM3U\n#EXT-X-VERSION:3\n#EXT-X-TARGETDURATION:8\n#EXT-X-MEDIA-SEQUENCE:0\n#EXT-X-PLAYLIST-TYPE:VOD\n#EXTINF:4.379378,\nhttp://localhost:8000/travis/travis0.ts\n#EXTINF:6.297956,\nhttp://localhost:8000/travis/travis1.ts\n#EXTINF:5.338667,\nhttp://localhost:8000/travis/travis2.ts\n#EXTINF:1.960289,\nhttp://localhost:8000/travis/travis3.ts\n#EXTINF:3.378378,\nhttp://localhost:8000/travis/travis4.ts\n#EXTINF:4.087422,\nhttp://localhost:8000/travis/travis5.ts\n#EXTINF:3.545200,\nhttp://localhost:8000/travis/travis6.ts\n#EXTINF:3.878878,\n#EXT-X-CUE-OUT:16.000\n#EXTINF:3.999744,\nhttp://localhost:8000/journey0.ts\n#EXTINF:4.000600,\nhttp://localhost:8000/journey1.ts\n#EXTINF:3.999567,\nhttp://localhost:8000/journey2.ts\n#EXTINF:4.000144,\nhttp://localhost:8000/journey3.ts\n#EXT-X-CUE-IN\nhttp://localhost:8000/travis/travis7.ts\n#EXTINF:3.169833,\nhttp://localhost:8000/travis/travis8.ts\n#EXTINF:5.338667,\nhttp://localhost:8000/travis/travis9.ts\n#EXTINF:4.587922,\nhttp://localhost:8000/travis/travis10.ts\n#EXTINF:5.755744,\nhttp://localhost:8000/travis/travis11.ts\n#EXTINF:0.333667,\nhttp://localhost:8000/travis/travis12.ts\n#EXTINF:5.338667,\nhttp://localhost:8000/travis/travis13.ts\n#EXTINF:4.421089,\nhttp://localhost:8000/travis/travis14.ts\n#EXTINF:6.256244,\nhttp://localhost:8000/travis/travis15.ts\n#EXTINF:1.418089,\nhttp://localhost:8000/travis/travis16.ts\n#EXTINF:3.920578,\nhttp://localhost:8000/travis/travis17.ts\n#EXTINF:5.338667,\nhttp://localhost:8000/travis/travis18.ts\n#EXTINF:5.338667,\nhttp://localhost:8000/travis/travis19.ts\n#EXTINF:5.338667,\nhttp://localhost:8000/travis/travis20.ts\n#EXTINF:1.126122,\nhttp://localhost:8000/travis/travis21.ts\n#EXTINF:1.835167,\nhttp://localhost:8000/travis/travis22.ts\n#EXTINF:7.716044,\nhttp://localhost:8000/travis/travis23.ts\n#EXTINF:1.543211,\nhttp://localhost:8000/travis/travis24.ts\n#EXTINF:2.752744,\nhttp://localhost:8000/travis/travis25.ts\n#EXTINF:5.880878,\nhttp://localhost:8000/travis/travis26.ts\n#EXTINF:2.877878,\nhttp://localhost:8000/travis/travis27.ts\n#EXTINF:2.961289,\nhttp://localhost:8000/travis/travis28.ts\n#EXTINF:5.338667,\nhttp://localhost:8000/travis/travis29.ts\n#EXTINF:5.213544,\nhttp://localhost:8000/travis/travis30.ts\n#EXTINF:5.463789,\nhttp://localhost:8000/travis/travis31.ts\n#EXTINF:5.338667,\nhttp://localhost:8000/travis/travis32.ts\n#EXTINF:5.338667,\nhttp://localhost:8000/travis/travis33.ts\n#EXTINF:1.835167,\nhttp://localhost:8000/travis/travis34.ts\n#EXTINF:3.503500,\nhttp://localhost:8000/travis/travis35.ts\n#EXTINF:1.418089,\nhttp://localhost:8000/travis/travis36.ts\n#EXTINF:3.920578,\nhttp://localhost:8000/travis/travis37.ts\n#EXTINF:4.462789,\nhttp://localhost:8000/travis/travis38.ts\n#EXTINF:6.214544,\nhttp://localhost:8000/travis/travis39.ts\n#EXTINF:5.338667,\nhttp://localhost:8000/travis/travis40.ts\n#EXTINF:2.752756,\nhttp://localhost:8000/travis/travis41.ts\n#EXTINF:2.585911,\nhttp://localhost:8000/travis/travis42.ts\n#EXTINF:3.545211,\nhttp://localhost:8000/travis/travis43.ts\n#EXTINF:1.793456,\nhttp://localhost:8000/travis/travis44.ts\n#EXTINF:5.338667,\nhttp://localhost:8000/travis/travis45.ts\n#EXTINF:5.338667,\nhttp://localhost:8000/travis/travis46.ts\n#EXTINF:1.292956,\nhttp://localhost:8000/travis/travis47.ts\n#EXTINF:4.045711,\nhttp://localhost:8000/travis/travis48.ts\n#EXTINF:4.129122,\nhttp://localhost:8000/travis/travis49.ts\n#EXTINF:5.005000,\nhttp://localhost:8000/travis/travis50.ts\n#EXTINF:2.836167,\nhttp://localhost:8000/travis/travis51.ts\n#EXTINF:4.045711,\nhttp://localhost:8000/travis/travis52.ts\n#EXTINF:4.379378,\nhttp://localhost:8000/travis/travis53.ts\n#EXTINF:6.297956,\nhttp://localhost:8000/travis/travis54.ts\n#EXTINF:1.918589,\nhttp://localhost:8000/travis/travis55.ts\n#EXTINF:3.420078,\nhttp://localhost:8000/travis/travis56.ts\n#EXTINF:4.004000,\nhttp://localhost:8000/travis/travis57.ts\n#EXTINF:5.922589,\nhttp://localhost:8000/travis/travis58.ts\n#EXTINF:5.422078,\nhttp://localhost:8000/travis/travis59.ts\n#EXTINF:5.338667,\nhttp://localhost:8000/travis/travis60.ts\n#EXTINF:1.543311,\nhttp://localhost:8000/travis/travis61.ts\n#EXT-X-ENDLIST"
     },
     {
-      "ID": 2,
+      "id": 2,
       "Price": 76000,
       "Duration": 37000,
       "Playlist": "Blank 2"
     },
     {
-      "ID": 3,
+      "id": 3,
       "Price": 210000,
       "Duration": 44000,
       "Playlist": "#EXTM3U\n#EXT-X-VERSION:3\n#EXT-X-TARGETDURATION:30\n#EXT-X-MEDIA-SEQUENCE:0\n\n#EXTINF:30.0,\nhttp://localhost:8000/o1.ts\n\n#EXT-X-ENDLIST"
     },
     {
-      "ID": 4,
+      "id": 4,
       "Price": 115000,
       "Duration": 23000,
       "Playlist": "Blank 4"
     },
     {
-      "ID": 5,
+      "id": 5,
       "Price": 131000,
       "Duration": 25000,
       "Playlist": "Blank 5"
     },
     {
-      "ID": 6,
+      "id": 6,
       "Price": 41000,
       "Duration": 17000,
       "Playlist": "Blank 6"
     },
     {
-      "ID": 7,
+      "id": 7,
       "Price": 74000,
       "Duration": 22000,
       "Playlist": "Blank 7"

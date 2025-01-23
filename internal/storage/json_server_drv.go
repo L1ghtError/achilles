@@ -15,33 +15,32 @@ type JsonServerDrv struct {
 }
 
 func (c *JsonServerDrv) GetSource(id uint64) (models.Source, bool) {
-	url := fmt.Sprintf("%s/Sources?ID=%d", c.Hostname, id)
+	url := fmt.Sprintf("%s/Sources/%d", c.Hostname, id)
 	resp, err := http.Get(url)
 	if err != nil {
 		return models.Source{}, false
 	}
 
-	defer resp.Body.Close() // Ensure response body is closed
+	defer resp.Body.Close()
 
-	// Read the response body
 	body, err := io.ReadAll(resp.Body)
 	if err != nil {
 		return models.Source{}, false
 	}
 
-	var src []models.Source
+	var src models.Source
 	err = json.Unmarshal([]byte(body), &src)
-	if err != nil || len(src) == 0 {
+	if err != nil {
 		log.Print(err)
 		return models.Source{}, false
 	}
-	return src[0], true
+	return src, true
 }
 
 func (c *JsonServerDrv) GetCampaignBatch(ids []uint64) []models.Campaign {
 	query := ""
 	for _, v := range ids {
-		query += "ID=" + strconv.Itoa(int(v)) + "&"
+		query += "id=" + strconv.Itoa(int(v)) + "&"
 	}
 	url := fmt.Sprintf("%s/Campaigns?%s", c.Hostname, query)
 	resp, err := http.Get(url)
@@ -49,9 +48,7 @@ func (c *JsonServerDrv) GetCampaignBatch(ids []uint64) []models.Campaign {
 		return []models.Campaign{}
 	}
 
-	defer resp.Body.Close() // Ensure response body is closed
-
-	// Read the response body
+	defer resp.Body.Close()
 	body, err := io.ReadAll(resp.Body)
 	if err != nil {
 		return []models.Campaign{}
@@ -69,7 +66,7 @@ func (c *JsonServerDrv) GetCampaignBatch(ids []uint64) []models.Campaign {
 func (c *JsonServerDrv) GetCreativeBatch(ids []uint64) []models.Creative {
 	query := ""
 	for _, v := range ids {
-		query += "ID=" + strconv.Itoa(int(v)) + "&"
+		query += "id=" + strconv.Itoa(int(v)) + "&"
 	}
 	url := fmt.Sprintf("%s/Creatives?%s", c.Hostname, query)
 	resp, err := http.Get(url)
@@ -77,9 +74,8 @@ func (c *JsonServerDrv) GetCreativeBatch(ids []uint64) []models.Creative {
 		return []models.Creative{}
 	}
 
-	defer resp.Body.Close() // Ensure response body is closed
+	defer resp.Body.Close()
 
-	// Read the response body
 	body, err := io.ReadAll(resp.Body)
 	if err != nil {
 		return []models.Creative{}

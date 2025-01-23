@@ -10,14 +10,14 @@ const (
 )
 
 type Source struct {
-	ID        uint64   `json:"ID"`
+	ID        uint64   `json:"id"`
 	Name      string   `json:"Name"`
 	Status    Status   `json:"Status"`
 	Campaigns []uint64 `json:"Campaigns"`
 }
 
 type Campaign struct {
-	ID        uint64    `json:"ID"`
+	ID        uint64    `json:"id"`
 	Name      string    `json:"Name"`
 	StartTime time.Time `json:"StartTime"`
 	EndTime   time.Time `json:"EndTime"`
@@ -26,7 +26,7 @@ type Campaign struct {
 }
 
 type Creative struct {
-	ID       uint64 `json:"ID"`
+	ID       uint64 `json:"id"`
 	Price    uint64 `json:"Price"`    // Price in cents
 	Duration uint64 `json:"Duration"` // Time in miliseconds
 	Playlist string `json:"Playlist"`
