@@ -5,6 +5,7 @@ import (
 	"ahls_srvi/internal/storage"
 	"net/http"
 	"strconv"
+	"strings"
 	"time"
 )
 
@@ -88,5 +89,5 @@ func (ah *AppHandler) GetAppropriateContent(w http.ResponseWriter, r *http.Reque
 	}
 	id := strconv.Itoa(int(creatives[ci].ID))
 	w.Header().Set("X-Resource-ID", id)
-	w.Write([]byte(creatives[ci].Playlist))
+	w.Write([]byte(strings.ReplaceAll(creatives[ci].Playlist, "\\n", "\n")))
 }

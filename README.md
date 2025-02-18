@@ -1,7 +1,7 @@
 # HLS SERVICES
 
 #### This is services for advertising issue, written in Golang
-#### To prevent project from using third party libs, it communicates with [json-server](https://www.npmjs.com/package/json-server) via standart [net-http](https://pkg.go.dev/net/http) package
+#### It communicates with [json-server](https://www.npmjs.com/package/json-server) via standart [net-http](https://pkg.go.dev/net/http) package or with [cassandra](https://cassandra.apache.org/) via [cassandra-gocql-driver](https://github.com/apache/cassandra-gocql-driver)
 
 ### How to build
 ```bash
@@ -14,13 +14,19 @@ $ go build -o bin/ cmd/lhlc/lhlc.go
 ```
 ### How to run (params are optional, default should works well)
 ```bash
-$ .\bin\ahlc.exe [<app address>] [<json-server address>] [<cache ttl>]
-$ .\bin\lhlc.exe [<app address>] [<ahlc address>] [<json-server address>]
+$ .\bin\ahlc.exe -dbServerType='cassandra' -dbServerAddr='127.0.0.1:9042' -cacheTTL=20
+$ .\bin\lhlc.exe -appAddr='127.0.0.1:8081' -ahlcAddr='127.0.0.1:8080'
 ```
-### Run db
+### Run DB (Apache Cassandra)
+```bash
+$ sudo apt install cassandra
+$ sudo service cassandra start
+```
+### ALTERNATIVE Run DB (json-server)
 ```bash
 $ npx json-server -w ./db/db.json
 ```
+
 ### Run any static web server, for example:
 ```bash
 $ py -m http.server 8000 -d .\assets\

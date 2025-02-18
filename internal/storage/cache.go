@@ -54,9 +54,9 @@ func (c *ACache) GetSource(id uint64) (models.Source, bool) {
 		return item.Data, ok
 	} else {
 		c.soMtx.Lock()
-		defer c.soMtx.Unlock()
 		v, ok := c.upstream.GetSource(id)
 		c.Sources[id] = Cel[models.Source]{expiresAt: now + c.TTL, Data: v}
+		c.soMtx.Unlock()
 		return v, ok
 	}
 }
