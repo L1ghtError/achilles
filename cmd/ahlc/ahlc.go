@@ -31,7 +31,8 @@ const (
 
 // Command-line flags
 var (
-	appAddrFlag      = flag.String("appAddr", DefaultAppAddr, `Address of this application, default is: `+DefaultAppAddr)
+	helpFlag         = flag.Bool("help", false, `Prints "help" message`)
+	appAddrFlag      = flag.String("appAddr", DefaultAppAddr, `Address of this application`)
 	dbServerTypeFlag = flag.String("dbServerType", DefaultDBType, `DB that stores data, it can be either "cassandra" or "json-server"`)
 	dbServerAddrFlag = flag.String("dbServerAddr", DefaultDBServerAddr, `DB address, for exmple: "localhost:3000"`)
 	cacheTTL         = flag.Int64("cacheTTL", DefaultCacheUnixTTL, `TTL (time-to-live) for server cache in seconds`)
@@ -39,6 +40,10 @@ var (
 
 func main() {
 	flag.Parse()
+	if *helpFlag {
+		flag.PrintDefaults()
+		return
+	}
 	var db storage.ICustodian
 	if *dbServerTypeFlag == DBTypeJSONServer {
 		if !strings.Contains(*dbServerAddrFlag, "http://") &&

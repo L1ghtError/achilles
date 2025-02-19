@@ -11,12 +11,17 @@ const (
 )
 
 var (
-	appAddrFlag  = flag.String("appAddr", DefaultAppaAddr, `Address of this application, default is: `+DefaultAppaAddr)
-	ahlcAddrFlag = flag.String("ahlcAddr", DefaultAhlcServerAddr, `Address of ahlc application, default is: `+DefaultAhlcServerAddr)
+	helpFlag     = flag.Bool("help", false, `Prints "help" message`)
+	appAddrFlag  = flag.String("appAddr", DefaultAppaAddr, `Address of this application`)
+	ahlcAddrFlag = flag.String("ahlcAddr", DefaultAhlcServerAddr, `Address of ahlc application`)
 )
 
 func main() {
 	flag.Parse()
+	if *helpFlag {
+		flag.PrintDefaults()
+		return
+	}
 	jsonServerAddr := ""
 
 	infrastructure.RunL(*appAddrFlag, *ahlcAddrFlag, jsonServerAddr)
